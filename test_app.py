@@ -15,7 +15,7 @@ def test_get_tasks():
 
     response = client.get("/tasks")
 
-    assert response.status_code == 500
+    assert response.status_code == 200
 
     data = response.get_json()
 
