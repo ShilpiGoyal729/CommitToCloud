@@ -41,11 +41,11 @@ jobs:
         run: docker build -t commit-to-cloud:v1 .
       - name: Scans the Docker image
         uses: aquasecurity/trivy-action@master
-          with:
-            image-ref: commit-to-cloud:v1
-            severity: "CRITICAL,HIGH"
-            exit-code: "1"
-            format: table
+        with:
+          image-ref: commit-to-cloud:v1
+          severity: "CRITICAL,HIGH"
+          exit-code: "1"
+          format: table
   push:
     needs: scan
     runs-on: ubuntu-latest
